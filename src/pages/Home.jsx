@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FadeUp } from '../components/FadeUp';
+import { Marquee } from '../components/Marquee';
 
 export const Home = () => {
     const { scrollYProgress } = useScroll();
@@ -60,6 +61,9 @@ export const Home = () => {
                     </FadeUp>
                 </div>
             </section>
+
+            <Marquee text="STRATÉGIE • CRÉATIVITÉ • PERFORMANCE • INFLUENCE • BRANDING • " />
+            <Marquee text="TIKTOK • REELS • SHOOTING • SOCIAL MEDIA • " reverse={true} />
 
             {/* 02 - NOTRE VISION : LIGHT THEME */}
             <section className="section theme-light" style={{ padding: '6rem 0' }}>

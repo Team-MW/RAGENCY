@@ -139,6 +139,114 @@
   color: var(--text-main);
 }
 
+/* MARQUEE ANIMATION */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 0;
+  display: flex;
+  background: var(--accent-base);
+  color: #fff;
+  transform: rotate(-2deg) scale(1.05);
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-container.reverse {
+  transform: rotate(2deg) scale(1.05);
+  background: var(--text-main);
+  color: var(--bg);
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container.reverse .marquee-content {
+  animation-direction: reverse;
+}
+
+.marquee-content span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0 4rem;
+  letter-spacing: 0.1em;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* NOISE GRAIN */
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* BUTTON HOVER ANIMATIONS */
+.btn svg {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* FLOAT ANIMATION FOR ORBS */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.glow-orb {
+  animation: float 20s ease-in-out infinite alternate;
+}
+
+.service-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent-base);
+}
+
 .service-list {
   margin-top: auto;
 }

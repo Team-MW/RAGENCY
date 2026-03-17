@@ -15,6 +15,7 @@ export const Layout = () => {
 
     return (
         <>
+            <div className="noise-bg"></div>
             <nav className="nav theme-dark">
                 <Link to="/" className="logo">R.AGENCY</Link>
 

@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, Award, Camera, Target, Users, TrendingUp } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
 
 export const Agency = () => {
     return (
         <>
+            <Helmet>
+                <title>L'Agence | Méthode, Résultats & Équipe | R.AGENCY</title>
+                <meta name="description" content="Découvrez notre méthode en 4 étapes, nos résultats (+11M de vues générées) et notre équipe de talents dédiés à la création de contenu." />
+            </Helmet>
             {/* 05 - NOTRE MÉTHODE : DARK THEME */}
             <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
                 <div className="container">

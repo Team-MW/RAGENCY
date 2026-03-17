@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, MessageSquare, PenTool, Target, Users, Video } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
 
 export const Services = () => {
     return (
         <>
+            <Helmet>
+                <title>Nos Services | Stratégie, Création & Social Media | R.AGENCY</title>
+                <meta name="description" content="Découvrez nos services d'agence de communication : stratégie social media, création de contenu TikTok / Reels, influence, community management et branding." />
+            </Helmet>
             <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '4rem' }}>
                 <div className="container">
                     <FadeUp>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, MapPin, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,9 +12,13 @@ export const Home = () => {
 
     return (
         <>
-            <motion.div style={{ y: yBg1 }} className="glow-orb" style={{ top: '5%', left: '-10%' }} />
-            <motion.div style={{ y: yBg2 }} className="glow-orb" style={{ top: '40%', right: '-10%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} />
-            <motion.div style={{ y: yBg1 }} className="glow-orb" style={{ bottom: '10%', left: '20%' }} />
+            <Helmet>
+                <title>R.AGENCY | Agence de communication & création de contenu</title>
+                <meta name="description" content="Développez la visibilité de votre marque grâce à nos stratégies de contenu performantes et notre approche moderne des réseaux sociaux." />
+            </Helmet>
+            <motion.div style={{ y: yBg1, top: '5%', left: '-10%' }} className="glow-orb" />
+            <motion.div style={{ y: yBg2, top: '40%', right: '-10%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} className="glow-orb" />
+            <motion.div style={{ y: yBg1, bottom: '10%', left: '20%' }} className="glow-orb" />
 
             {/* 01 - HERO : DARK THEME */}
             <section className="hero container theme-dark">

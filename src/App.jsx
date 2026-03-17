@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Agency } from './pages/Agency';
 import { Contact } from './pages/Contact';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 
 // Scroll to top on route change
@@ -20,17 +21,19 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="services" element={<Services />} />
-          <Route path="l-agence" element={<Agency />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="services" element={<Services />} />
+            <Route path="l-agence" element={<Agency />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </Router>
+    </HelmetProvider>
   );
 }
 

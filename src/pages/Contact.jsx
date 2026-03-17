@@ -1,10 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
 
 export const Contact = () => {
     return (
         <>
+            <Helmet>
+                <title>Contactez-Nous | R.AGENCY à Toulouse & International</title>
+                <meta name="description" content="Discutons de votre projet de développement digital. Basée à Toulouse et présente à Dubaï, Maroc, Algérie. Contactez R.agency pour une stratégie de visibilité." />
+            </Helmet>
             <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
                 <div className="container">
                     <FadeUp>

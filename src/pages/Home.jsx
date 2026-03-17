@@ -49,14 +49,14 @@ export const Home = () => {
                         </div>
                     </FadeUp>
 
-                    <FadeUp delay={0.6} className="mt-12" style={{ marginTop: '4rem', display: 'flex', gap: '2rem', flexWrap: 'wrap', opacity: 0.8 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <MapPin size={18} color="var(--accent-base)" />
-                            <span style={{ fontSize: '0.9rem', fontFamily: 'Outfit' }}>Basée à Toulouse</span>
+                    <FadeUp delay={0.6} style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.2rem', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--glass-border)', borderRadius: '100px', width: 'fit-content', backdropFilter: 'blur(10px)' }}>
+                            <MapPin size={18} color="var(--accent-base)" style={{ flexShrink: 0 }} />
+                            <span style={{ fontSize: '0.95rem', fontFamily: 'Outfit', color: 'var(--text-main)', letterSpacing: '0.5px' }}>Basée à <span style={{ fontWeight: '600' }}>Toulouse</span></span>
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <Globe size={18} color="var(--accent-base)" />
-                            <span style={{ fontSize: '0.9rem', fontFamily: 'Outfit' }}>France • Maroc • Algérie • Dubaï</span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.2rem', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--glass-border)', borderRadius: '100px', width: 'fit-content', backdropFilter: 'blur(10px)' }}>
+                            <Globe size={18} color="var(--accent-base)" style={{ flexShrink: 0 }} />
+                            <span style={{ fontSize: '0.95rem', fontFamily: 'Outfit', color: 'var(--text-muted)', letterSpacing: '0.5px' }}>France • Maroc • Algérie • Dubaï</span>
                         </div>
                     </FadeUp>
                 </div>

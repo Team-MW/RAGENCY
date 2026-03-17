@@ -138,7 +138,7 @@ export const Layout = () => {
                     <div className="footer-bottom">
                         <p>© {new Date().getFullYear()} R.AGENCY. Agence de communication & création de contenu. Tous droits réservés.</p>
                         <div className="footer-legals">
-                            <Link to="#">Mentions Légales</Link>
+                            <Link to="/mentions-legales">Mentions Légales</Link>
                             <Link to="#">Politique de confidentialité</Link>
                         </div>
                     </div>

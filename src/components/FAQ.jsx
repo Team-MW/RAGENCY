@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { FadeUp } from './FadeUp';
 
-const faqs = [
+const faqsHome = [
     {
         q: "Qu'est-ce qui différencie R.agency des autres agences ?",
-        a: "Notre ADN repose sur un mix entre stratégie analytique et créativité organique (TikTok, Reels). Nous ne sommes pas une agence traditionnelle : nous produisons du contenu pensé nativement pour les plateformes sociales, avec une équipe de talents et modèles en interne."
+        a: "Notre ADN repose sur un mix entre stratégie analytique et créativité organique (TikTok, Reels). Nous ne sommes pas une agence traditionnelle : nous produisons du contenu pensé nativement pour les plateformes sociales, avec une équipe de talents en interne."
     },
     {
         q: "Combien de temps faut-il pour voir des résultats ?",
@@ -21,8 +22,75 @@ const faqs = [
     }
 ];
 
+const faqsServices = [
+    {
+        q: "Quels réseaux sociaux gérez-vous ?",
+        a: "Nous maîtrisons et activons tous les principaux leviers sociaux : TikTok, Instagram, LinkedIn, YouTube Shorts, ainsi que les stratégies de contenu qui s'y rapportent."
+    },
+    {
+        q: "Comment définissez-vous la stratégie éditoriale ?",
+        a: "Notre équipe réalise un audit en profondeur de votre image de marque, de votre concurrence et de vos cibles pour construire une ligne éditoriale impactante qui parle à votre audience."
+    },
+    {
+        q: "Proposez-vous la gestion d'influenceurs ?",
+        a: "Oui, R.agency propose un accompagnement sur les campagnes d'influence en collaborant avec des créateurs de contenu qui correspondent parfaitement à vos valeurs."
+    },
+    {
+        q: "Pouvons-nous vous déléguer uniquement le montage ?",
+        a: "Tout à fait. Nous pouvons reprendre vos propres rushs et assurer un montage dynamique, habillé et calibré aux standards actuels des vidéos virales courtes."
+    }
+];
+
+const faqsAgency = [
+    {
+        q: "Comment se déroule le lancement d'un projet ?",
+        a: "Dès validation du devis, nous organisons une réunion de lancement stratégique (kick-off) avec nos experts pour nous imprégner totalement de l'ADN de votre marque."
+    },
+    {
+        q: "Comment mesurez-vous la performance ?",
+        a: "Nous fournissons des reportings détaillés sur les KPI (couverture, engagement, conversion) afin que nos stratégies data-driven maximisent constamment votre ROI."
+    },
+    {
+        q: "Aurez-vous un suivi personnalisé ?",
+        a: "Absolument. Une équipe dédiée est assignée à votre projet, garantissant une grande réactivité et des échanges fluides au quotidien."
+    },
+    {
+        q: "Les créateurs de contenus sont-ils internes ?",
+        a: "Notre force réside dans la collaboration avec des modèles photos, créateurs UGC, et influenceurs partenaires, ce qui facilite énormément la production."
+    }
+];
+
+const faqsContact = [
+    {
+        q: "Comment obtenir un devis ou une estimation ?",
+        a: "Le plus simple est de remplir notre formulaire de contact. Nous reviendrons rapidement vers vous pour évaluer précisément vos besoins et vos objectifs."
+    },
+    {
+        q: "Quels sont vos tarifs ?",
+        a: "Nos tarifs s'adaptent au volume de contenu, aux plateformes et au niveau d'accompagnement souhaité. Chaque stratégie et devis est par définition sur-mesure."
+    },
+    {
+        q: "Pouvons-nous vous rencontrer sur place ?",
+        a: "Avec grand plaisir ! Si vous êtes dans la région toulousaine, on serait ravis d'échanger autour d'un café pour discuter de votre croissance digitale."
+    },
+    {
+        q: "Gérez-vous des missions flash ponctuelles ?",
+        a: "Bien que nous privilégions les accompagnements sur le long terme qui garantissent plus de résultats, nous restons ouverts aux prestations ponctuelles (shootings, lancements de marque)."
+    }
+];
+
 export const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
+    const location = useLocation();
+
+    let currentFaqs = faqsHome;
+    if (location.pathname === '/services') {
+        currentFaqs = faqsServices;
+    } else if (location.pathname === '/l-agence') {
+        currentFaqs = faqsAgency;
+    } else if (location.pathname === '/contact') {
+        currentFaqs = faqsContact;
+    }
 
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
@@ -42,7 +110,7 @@ export const FAQ = () => {
                 </FadeUp>
 
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    {faqs.map((faq, index) => (
+                    {currentFaqs.map((faq, index) => (
                         <FadeUp delay={index * 0.1} key={index}>
                             <div
                                 className="glass-panel"

@@ -2,14 +2,24 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, Award, Camera, Target, Users, TrendingUp } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
+import { Marquee } from '../components/Marquee';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Agency = () => {
+    const { scrollYProgress } = useScroll();
+    const yBg1 = useTransform(scrollYProgress, [0, 1], [0, 500]);
+    const yBg2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+
     return (
         <>
             <Helmet>
                 <title>L'Agence | Méthode, Résultats & Équipe | R.AGENCY</title>
                 <meta name="description" content="Découvrez notre méthode en 4 étapes, nos résultats (+11M de vues générées) et notre équipe de talents dédiés à la création de contenu." />
             </Helmet>
+
+            <motion.div style={{ y: yBg1, top: '10%', left: '-5%' }} className="glow-orb" />
+            <motion.div style={{ y: yBg2, top: '60%', right: '-10%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} className="glow-orb" />
+
             {/* 05 - NOTRE MÉTHODE : DARK THEME */}
             <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
                 <div className="container">
@@ -25,21 +35,21 @@ export const Agency = () => {
                             <div className="glass-panel method-step">
                                 <div className="step-number">01</div>
                                 <h3 className="step-title">Analyse</h3>
-                                <p style={{ color: 'var(--text-muted)' }}>Étude approfondie de votre marque, de votre marché et de votre audience cible.</p>
+                                <p style={{ color: 'var(--text-muted)' }}>Étude approfondie de votre marque, de votre marché et de votre audience cible pour déceler vos meilleures opportunités.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.2}>
                             <div className="glass-panel method-step">
                                 <div className="step-number">02</div>
                                 <h3 className="step-title">Stratégie</h3>
-                                <p style={{ color: 'var(--text-muted)' }}>Création d'une stratégie social media sur-mesure adaptée à vos objectifs spécifiques.</p>
+                                <p style={{ color: 'var(--text-muted)' }}>Création d'une stratégie social media sur-mesure, alignée avec votre identité et vos objectifs.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.3}>
                             <div className="glass-panel method-step">
                                 <div className="step-number">03</div>
                                 <h3 className="step-title">Création</h3>
-                                <p style={{ color: 'var(--text-muted)' }}>Production de contenus visuels et éditoriaux, créatifs et fortement engageants.</p>
+                                <p style={{ color: 'var(--text-muted)' }}>Production de contenus visuels et éditoriaux professionnels, percutants et fortement engageants.</p>
                             </div>
                         </FadeUp>
                         <FadeUp delay={0.4}>
@@ -52,6 +62,9 @@ export const Agency = () => {
                     </div>
                 </div>
             </section>
+
+            <Marquee text="ANALYSE • STRATÉGIE • CRÉATIVITÉ • PERFORMANCE • INNOVATION • " />
+            <Marquee text="ROI • ENGAGEMENT • COMMUNAUTÉ • RÉSULTATS • CROISSANCE • " reverse={true} />
 
             {/* 06 - NOS RÉSULTATS : LIGHT THEME */}
             <section className="section theme-light" style={{ padding: '6rem 0' }}>
@@ -115,7 +128,7 @@ export const Agency = () => {
                                 <span className="section-label" style={{ color: '#fff' }}>08 — Notre équipe</span>
                                 <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#fff' }}>10 talents dédiés</h3>
                                 <p style={{ color: 'rgba(255,255,255,0.9)', marginBottom: '1.5rem', fontSize: '1.1rem' }}>
-                                    Sami, Nabil, Ynes, Fares, Faycel à la direction.
+                                    Des experts passionnés et pluridisciplinaires à la direction.
                                 </p>
                                 <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>
                                     En collaboration avec des modèles photo, des créateurs de contenu et deux influenceuses partenaires.

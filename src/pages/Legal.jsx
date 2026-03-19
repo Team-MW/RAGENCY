@@ -33,7 +33,7 @@ export const Legal = () => {
                                     <p><strong>Siège social :</strong> Toulouse, France</p>
                                     <p><strong>Email :</strong> r.agency98@gmail.com</p>
                                     <p><strong>Téléphone :</strong> +33 7 81 34 04 83 / +33 6 47 19 54 36</p>
-                                    <p><strong>Directeur de la publication :</strong> L'équipe de direction (Sami, Nabil, Ynes, Fares, Faycel)</p>
+                                    <p><strong>Directeur de la publication :</strong> L'équipe de direction R.agency</p>
                                 </div>
                             </div>
                         </FadeUp>

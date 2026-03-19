@@ -2,27 +2,44 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, MapPin, Mail, Phone } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
+import { Marquee } from '../components/Marquee';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Contact = () => {
+    const { scrollYProgress } = useScroll();
+    const yBg1 = useTransform(scrollYProgress, [0, 1], [0, 500]);
+    const yBg2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+
     return (
         <>
             <Helmet>
                 <title>Contactez-Nous | R.AGENCY à Toulouse & International</title>
                 <meta name="description" content="Discutons de votre projet de développement digital. Basée à Toulouse et présente à Dubaï, Maroc, Algérie. Contactez R.agency pour une stratégie de visibilité." />
             </Helmet>
-            <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '6rem' }}>
+
+            <motion.div style={{ y: yBg1, top: '20%', left: '-5%' }} className="glow-orb" />
+            <motion.div style={{ y: yBg2, top: '70%', right: '-10%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} className="glow-orb" />
+
+            <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '4rem' }}>
                 <div className="container">
                     <FadeUp>
                         <div className="section-header text-center" style={{ textAlign: 'center' }}>
                             <span className="section-label">10 — Contact</span>
                             <h1 className="section-title">Discutons de votre <span className="text-gradient">projet</span></h1>
-                            <p className="vision-text text-muted" style={{ fontSize: '1.2rem', marginTop: '1rem', maxWidth: '600px', margin: '0 auto' }}>
-                                Que vous souhaitiez refondre votre image de marque, augmenter vos ventes ou développer votre communauté, notre équipe est à votre écoute.
+                            <p className="vision-text text-muted" style={{ fontSize: '1.2rem', marginTop: '1rem', maxWidth: '750px', margin: '0 auto' }}>
+                                Que vous souhaitiez refondre votre image de marque, booster vos ventes ou fédérer une communauté engagée, nos experts sont à votre écoute pour vous accompagner sur mesure.
                             </p>
                         </div>
                     </FadeUp>
+                </div>
+            </section>
 
-                    <div className="grid-2" style={{ marginTop: '4rem' }}>
+            <Marquee text="PARLONS PROJET • COLLABORATION • CROISSANCE • CONSEIL • " />
+            <Marquee text="DEVIS SUR MESURE • ACCOMPAGNEMENT • STRATÉGIE • SUCCÈS • " reverse={true} />
+
+            <section className="section theme-dark" style={{ paddingBottom: '6rem' }}>
+                <div className="container">
+                    <div className="grid-2" style={{ marginTop: '0' }}>
                         {/* Contact Form Details */}
                         <FadeUp delay={0.2}>
                             <div className="glass-panel" style={{ padding: '3rem' }}>

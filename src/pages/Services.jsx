@@ -2,27 +2,41 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { CheckCircle2, MessageSquare, PenTool, Target, Users, Video } from 'lucide-react';
 import { FadeUp } from '../components/FadeUp';
+import { Marquee } from '../components/Marquee';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Services = () => {
+    const { scrollYProgress } = useScroll();
+    const yBg1 = useTransform(scrollYProgress, [0, 1], [0, 500]);
+    const yBg2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
+
     return (
         <>
             <Helmet>
                 <title>Nos Services | Stratégie, Création & Social Media | R.AGENCY</title>
                 <meta name="description" content="Découvrez nos services d'agence de communication : stratégie social media, création de contenu TikTok / Reels, influence, community management et branding." />
             </Helmet>
+
+            <motion.div style={{ y: yBg1, top: '5%', right: '-5%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} className="glow-orb" />
+            <motion.div style={{ y: yBg2, top: '40%', left: '-10%' }} className="glow-orb" />
+
             <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '4rem' }}>
                 <div className="container">
                     <FadeUp>
                         <div className="section-header text-center" style={{ textAlign: 'center' }}>
                             <span className="section-label">04 — Nos services</span>
                             <h1 className="section-title">Notre <span className="text-gradient">Expertise Digitale</span></h1>
-                            <p className="vision-text text-muted" style={{ fontSize: '1.2rem', marginTop: '1rem', maxWidth: '600px', margin: '0 auto' }}>
-                                Nous construisons des stratégies digitales adaptées à votre marque et à vos objectifs pour maximiser votre visibilité.
+                            <p className="vision-text text-muted" style={{ fontSize: '1.2rem', marginTop: '1rem', maxWidth: '750px', margin: '0 auto' }}>
+                                Nous construisons des stratégies digitales percutantes, adaptées à l'ADN de votre marque pour décupler votre visibilité,
+                                engager votre communauté et générer des résultats très concrets.
                             </p>
                         </div>
                     </FadeUp>
                 </div>
             </section>
+
+            <Marquee text="TIKTOK • REELS • INSTAGRAM • LINKEDIN • YOUTUBE • " />
+            <Marquee text="CRÉATION • MONTAGE • DESIGN • COPYWRITING • INFLUENCE • " reverse={true} />
 
             <section className="section theme-light" style={{ padding: '4rem 0 8rem 0' }}>
                 <div className="container">

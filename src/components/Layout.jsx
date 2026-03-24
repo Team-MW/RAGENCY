@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Video, Menu, X, ArrowRight } from 'lucide-react';
 import { FAQ } from './FAQ';
 import { FadeUp } from './FadeUp';
+import { FloatingWhatsApp } from './FloatingWhatsApp';
 
 export const Layout = () => {
     const location = useLocation();
@@ -51,6 +52,8 @@ export const Layout = () => {
 
             {/* The FAQ section at the bottom of every page (before footer) - Light Theme */}
             <FAQ />
+
+            <FloatingWhatsApp />
 
             {/* FOOTER */}
             <footer className="footer theme-dark">

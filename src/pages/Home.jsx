@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, MapPin, Globe } from 'lucide-react';
+import { ArrowRight, MapPin, Globe, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FadeUp } from '../components/FadeUp';
 import { Marquee } from '../components/Marquee';
@@ -50,6 +50,10 @@ export const Home = () => {
                     </FadeUp>
 
                     <FadeUp delay={0.6} style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                        <a href="mailto:r.agency98@gmail.com" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.2rem', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid var(--accent-base)', borderRadius: '100px', width: 'fit-content', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease', cursor: 'pointer' }} onMouseEnter={(e) => Object.assign(e.currentTarget.style, { background: 'rgba(255, 255, 255, 0.15)', transform: 'translateY(-2px)' })} onMouseLeave={(e) => Object.assign(e.currentTarget.style, { background: 'rgba(255, 255, 255, 0.08)', transform: 'translateY(0)' })}>
+                            <Mail size={18} color="var(--text-main)" style={{ flexShrink: 0 }} />
+                            <span style={{ fontSize: '1rem', fontFamily: 'Outfit', color: 'var(--text-main)', letterSpacing: '0.5px', fontWeight: '600' }}>r.agency98@gmail.com</span>
+                        </a>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem 1.2rem', background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--glass-border)', borderRadius: '100px', width: 'fit-content', backdropFilter: 'blur(10px)' }}>
                             <MapPin size={18} color="var(--accent-base)" style={{ flexShrink: 0 }} />
                             <span style={{ fontSize: '0.95rem', fontFamily: 'Outfit', color: 'var(--text-main)', letterSpacing: '0.5px' }}>Basée à <span style={{ fontWeight: '600' }}>Toulouse</span></span>

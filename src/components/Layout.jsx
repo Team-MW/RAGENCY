@@ -126,6 +126,14 @@ export const Layout = () => {
                             <div>
                                 <h4 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '1.5rem', fontFamily: 'Outfit' }}>Contact</h4>
                                 <ul className="footer-contact-list">
+                                    <li style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '0.5rem' }}>
+                                        <Mail size={24} color="var(--accent-base)" style={{ flexShrink: 0 }} />
+                                        <span style={{ color: 'var(--text-main)', fontSize: '1.1rem', fontWeight: '600' }}>
+                                            <a href="mailto:r.agency98@gmail.com" className="hover-text-gradient" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+                                                r.agency98@gmail.com
+                                            </a>
+                                        </span>
+                                    </li>
                                     <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                         <MapPin size={20} color="var(--accent-base)" style={{ flexShrink: 0, marginTop: '2px' }} />
                                         <span style={{ color: 'var(--text-muted)' }}>Toulouse<br />France • Maroc • Algérie • Dubaï</span>
@@ -137,10 +145,6 @@ export const Layout = () => {
                                             <br />
                                             <a href="tel:+33647195436" style={{ color: 'inherit', textDecoration: 'none' }}>+33 6 47 19 54 36</a>
                                         </span>
-                                    </li>
-                                    <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                        <Mail size={20} color="var(--accent-base)" style={{ flexShrink: 0 }} />
-                                        <span style={{ color: 'var(--text-muted)' }}>r.agency98@gmail.com</span>
                                     </li>
                                 </ul>
                             </div>

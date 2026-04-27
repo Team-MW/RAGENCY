@@ -10,6 +10,20 @@ export const Contact = () => {
     const yBg1 = useTransform(scrollYProgress, [0, 1], [0, 500]);
     const yBg2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
+    React.useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+            if (existingScript && document.body.contains(existingScript)) {
+                document.body.removeChild(existingScript);
+            }
+        };
+    }, []);
+
     return (
         <>
             <Helmet>
@@ -112,6 +126,29 @@ export const Contact = () => {
                             </div>
                         </FadeUp>
                     </div>
+                </div>
+            </section>
+            <section className="section theme-dark" style={{ paddingTop: '2rem', paddingBottom: '6rem' }}>
+                <div className="container">
+                    <FadeUp>
+                        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1rem' }}>
+                                Planifiez un <span className="text-gradient">Rendez-vous</span>
+                            </h2>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
+                                Choisissez un créneau de 30 minutes directement dans notre calendrier pour échanger sur vos objectifs.
+                            </p>
+                        </div>
+                    </FadeUp>
+                    <FadeUp delay={0.2}>
+                        <div style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '20px', padding: '1rem', overflow: 'hidden' }}>
+                            <div 
+                                className="calendly-inline-widget" 
+                                data-url="https://calendly.com/desosocalendly/30min" 
+                                style={{ minWidth: '320px', height: '700px', width: '100%' }}
+                            ></div>
+                        </div>
+                    </FadeUp>
                 </div>
             </section>
         </>

@@ -56,40 +56,15 @@ export const Contact = () => {
                     <div className="grid-2" style={{ marginTop: '0' }}>
                         {/* Contact Form Details */}
                         <FadeUp delay={0.2}>
-                            <div className="glass-panel" style={{ padding: '3rem' }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Envoyez-nous un message</h3>
-                                <form style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
-                                        <input
-                                            type="text"
-                                            placeholder="Nom"
-                                            style={{ flex: 1, padding: '1rem', background: 'var(--bg)', border: '1px solid var(--glass-border)', borderRadius: '10px', color: 'var(--text-main)' }}
-                                        />
-                                        <input
-                                            type="text"
-                                            placeholder="Prénom"
-                                            style={{ flex: 1, padding: '1rem', background: 'var(--bg)', border: '1px solid var(--glass-border)', borderRadius: '10px', color: 'var(--text-main)' }}
-                                        />
-                                    </div>
-                                    <input
-                                        type="email"
-                                        placeholder="Email professionnel"
-                                        style={{ padding: '1rem', background: 'var(--bg)', border: '1px solid var(--glass-border)', borderRadius: '10px', color: 'var(--text-main)' }}
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Secteur d'activité"
-                                        style={{ padding: '1rem', background: 'var(--bg)', border: '1px solid var(--glass-border)', borderRadius: '10px', color: 'var(--text-main)' }}
-                                    />
-                                    <textarea
-                                        placeholder="Décrivez votre besoin en quelques mots..."
-                                        rows="4"
-                                        style={{ padding: '1rem', background: 'var(--bg)', border: '1px solid var(--glass-border)', borderRadius: '10px', color: 'var(--text-main)', resize: 'none' }}
-                                    />
-                                    <button type="button" className="btn btn-primary" style={{ alignSelf: 'flex-start', marginTop: '1rem' }}>
-                                        Envoyer <ArrowRight size={20} />
-                                    </button>
-                                </form>
+                            <div className="glass-panel" style={{ padding: '2rem' }}>
+                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Planifiez un rendez-vous</h3>
+                                <div style={{ overflow: 'hidden', borderRadius: '10px' }}>
+                                    <div 
+                                        className="calendly-inline-widget" 
+                                        data-url="https://calendly.com/desosocalendly/30min" 
+                                        style={{ minWidth: '320px', height: '650px', width: '100%' }}
+                                    ></div>
+                                </div>
                             </div>
                         </FadeUp>
 
@@ -128,29 +103,7 @@ export const Contact = () => {
                     </div>
                 </div>
             </section>
-            <section className="section theme-dark" style={{ paddingTop: '2rem', paddingBottom: '6rem' }}>
-                <div className="container">
-                    <FadeUp>
-                        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '1rem' }}>
-                                Planifiez un <span className="text-gradient">Rendez-vous</span>
-                            </h2>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-                                Choisissez un créneau de 30 minutes directement dans notre calendrier pour échanger sur vos objectifs.
-                            </p>
-                        </div>
-                    </FadeUp>
-                    <FadeUp delay={0.2}>
-                        <div style={{ background: 'var(--glass-bg)', border: '1px solid var(--glass-border)', borderRadius: '20px', padding: '1rem', overflow: 'hidden' }}>
-                            <div 
-                                className="calendly-inline-widget" 
-                                data-url="https://calendly.com/desosocalendly/30min" 
-                                style={{ minWidth: '320px', height: '700px', width: '100%' }}
-                            ></div>
-                        </div>
-                    </FadeUp>
-                </div>
-            </section>
+
         </>
     );
 };

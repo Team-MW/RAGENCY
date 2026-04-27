@@ -80,7 +80,7 @@ export const Layout = () => {
                                     Agence de communication spécialisée dans la stratégie social media et la création de contenu performant.
                                 </p>
                                 <div style={{ display: 'flex', gap: '1rem' }}>
-                                    <a href="https://instagram.com/r.agency" target="_blank" rel="noreferrer" className="social-btn" aria-label="Instagram">
+                                    <a href="https://www.instagram.com/r.agencyy/" target="_blank" rel="noreferrer" className="social-btn" aria-label="Instagram">
                                         <Instagram size={20} color="var(--text-main)" />
                                     </a>
                                     <a href="#" className="social-btn" aria-label="TikTok">
@@ -155,7 +155,6 @@ export const Layout = () => {
                         <p>© {new Date().getFullYear()} R.AGENCY. Agence de communication & création de contenu. Tous droits réservés.</p>
                         <div className="footer-legals">
                             <Link to="/mentions-legales">Mentions Légales</Link>
-                            <Link to="#">Politique de confidentialité</Link>
                         </div>
                     </div>
                 </div>

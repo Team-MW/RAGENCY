@@ -53,28 +53,28 @@ export const Contact = () => {
 
             <section className="section theme-dark" style={{ paddingBottom: '6rem' }}>
                 <div className="container">
-                    <div className="grid-2" style={{ marginTop: '0' }}>
-                        {/* Contact Form Details */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginTop: '3rem' }}>
+                        {/* Calendly Inline Widget - Full Width */}
                         <FadeUp delay={0.2}>
                             <div className="glass-panel" style={{ padding: '2rem' }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)' }}>Planifiez un rendez-vous</h3>
+                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Planifiez un rendez-vous</h3>
                                 <div style={{ overflow: 'hidden', borderRadius: '10px' }}>
                                     <div 
                                         className="calendly-inline-widget" 
                                         data-url="https://calendly.com/desosocalendly/30min" 
-                                        style={{ minWidth: '320px', height: '650px', width: '100%' }}
+                                        style={{ minWidth: '320px', height: '700px', width: '100%' }}
                                     ></div>
                                 </div>
                             </div>
                         </FadeUp>
 
-                        {/* Direct Contact Details */}
+                        {/* Direct Contact Details - Centered Below */}
                         <FadeUp delay={0.4}>
-                            <div style={{ padding: '3rem' }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '2rem', color: 'var(--text-main)' }}>Contact direct</h3>
+                            <div className="glass-panel" style={{ padding: '3rem', width: '100%' }}>
+                                <h3 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Contact direct</h3>
 
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+                                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                         <div className="contact-icon" style={{ flexShrink: 0 }}><MapPin size={24} /></div>
                                         <div>
                                             <h4 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '0.2rem' }}>Où nous trouver ?</h4>
@@ -82,7 +82,7 @@ export const Contact = () => {
                                         </div>
                                     </div>
 
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
+                                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                         <div className="contact-icon" style={{ flexShrink: 0 }}><Phone size={24} /></div>
                                         <div>
                                             <h4 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '0.2rem' }}>Téléphone</h4>
@@ -90,7 +90,7 @@ export const Contact = () => {
                                         </div>
                                     </div>
 
-                                    <div style={{ display: 'flex', gap: '1rem' }}>
+                                    <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                         <div className="contact-icon" style={{ flexShrink: 0 }}><Mail size={24} /></div>
                                         <div>
                                             <h4 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '0.2rem' }}>Email</h4>

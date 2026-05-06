@@ -34,7 +34,7 @@ export const Contact = () => {
             <motion.div style={{ y: yBg1, top: '20%', left: '-5%' }} className="glow-orb" />
             <motion.div style={{ y: yBg2, top: '70%', right: '-10%', background: 'radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%)' }} className="glow-orb" />
 
-            <section className="section theme-dark" style={{ paddingTop: '10rem', paddingBottom: '4rem' }}>
+            <section className="section theme-dark contact-hero" style={{ paddingTop: '10rem', paddingBottom: '4rem' }}>
                 <div className="container">
                     <FadeUp>
                         <div className="section-header text-center" style={{ textAlign: 'center' }}>
@@ -56,13 +56,13 @@ export const Contact = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginTop: '3rem' }}>
                         {/* Calendly Inline Widget - Full Width */}
                         <FadeUp delay={0.2}>
-                            <div className="glass-panel" style={{ padding: '2rem' }}>
+                            <div className="glass-panel contact-details-panel" style={{ padding: '2rem' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Planifiez un rendez-vous</h3>
-                                <div style={{ overflow: 'hidden', borderRadius: '10px' }}>
+                                <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
                                     <div 
                                         className="calendly-inline-widget" 
                                         data-url="https://calendly.com/desosocalendly/30min" 
-                                        style={{ minWidth: '320px', height: '700px', width: '100%' }}
+                                        style={{ height: '700px', width: '100%' }}
                                     ></div>
                                 </div>
                             </div>
@@ -70,10 +70,10 @@ export const Contact = () => {
 
                         {/* Direct Contact Details - Centered Below */}
                         <FadeUp delay={0.4}>
-                            <div className="glass-panel" style={{ padding: '3rem', width: '100%' }}>
+                            <div className="glass-panel contact-details-panel" style={{ padding: '3rem', width: '100%' }}>
                                 <h3 style={{ fontSize: '2rem', marginBottom: '2.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Contact direct</h3>
 
-                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+                                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
                                     <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                                         <div className="contact-icon" style={{ flexShrink: 0 }}><MapPin size={24} /></div>
                                         <div>

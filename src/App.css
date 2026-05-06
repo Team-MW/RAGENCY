@@ -515,3 +515,39 @@
     text-align: center;
   }
 }
+
+/* Contact Page Responsive Fixes */
+@media (max-width: 768px) {
+  .contact-hero {
+    padding-top: 8rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .contact-details-panel {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .calendly-inline-widget {
+    height: 950px !important;
+    min-height: 950px !important;
+  }
+
+  .section-title {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .contact-hero {
+    padding-top: 6rem !important;
+  }
+}

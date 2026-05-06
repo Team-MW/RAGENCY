@@ -202,3 +202,15 @@ ul {
   z-index: 0;
   pointer-events: none;
 }
+
+/* Calendly Widget Fix */
+.calendly-inline-widget {
+  min-height: 700px;
+  height: 700px !important;
+}
+
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 950px !important; /* Increased height for mobile to ensure the "Schedule" button is visible and reachable */
+  }
+}

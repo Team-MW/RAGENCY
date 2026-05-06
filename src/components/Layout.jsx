@@ -15,7 +15,7 @@ export const Layout = () => {
     }, [location]);
 
     return (
-        <>
+        <div className="app-wrapper">
             <div className="noise-bg"></div>
             <nav className="nav theme-dark">
                 <Link to="/" className="logo">R.AGENCY</Link>
@@ -159,6 +159,6 @@ export const Layout = () => {
                     </div>
                 </div>
             </footer>
-        </>
+        </div>
     );
 };

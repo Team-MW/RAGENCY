@@ -143,26 +143,25 @@
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   padding: 2rem 0;
   display: flex;
   background: var(--accent-base);
   color: #fff;
-  transform: rotate(-2deg) scale(1.05);
-  margin-top: 2rem;
-  margin-bottom: 6rem;
+  transform: rotate(-2deg) scale(1.1);
+  margin-top: 4rem;
+  margin-bottom: 8rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .marquee-container.reverse {
-  transform: rotate(2deg) scale(1.05);
+  transform: rotate(2deg) scale(1.1);
   background: var(--text-main);
   color: var(--bg);
+  margin-top: -6rem;
+  margin-bottom: 6rem;
 }
 
 .marquee-content {
@@ -198,7 +197,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   pointer-events: none;
   z-index: 9999;
@@ -549,5 +548,33 @@
   
   .contact-hero {
     padding-top: 6rem !important;
+  }
+}
+/* Structural Solidity Fixes */
+.app-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Prevent horizontal scroll globally */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .marquee-container {
+    transform: rotate(-1deg) scale(1.1);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .marquee-container.reverse {
+    transform: rotate(1deg) scale(1.1);
+    margin-top: -3rem;
+    margin-bottom: 3rem;
   }
 }

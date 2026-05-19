@@ -578,3 +578,327 @@ html, body {
     margin-bottom: 3rem;
   }
 }
+
+/* Phone Mockup Styling */
+.phone-mockup-container {
+  perspective: 1000px;
+}
+
+.phone-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 580px;
+  border-radius: 40px;
+  border: 11px solid #16161a;
+  background: #000;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 
+              0 0 40px rgba(255, 16, 79, 0.05);
+  overflow: hidden;
+  margin: 0 auto;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.phone-mockup:hover {
+  transform: translateY(-10px) scale(1.03) rotateY(2deg);
+  border-color: #232329;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.9), 
+              0 0 50px rgba(255, 16, 79, 0.2);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 18px;
+  background: #16161a;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.phone-screen iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+}
+
+/* Hide filter label on mobile for cleaner spacing */
+@media (max-width: 480px) {
+  .hide-mobile-label {
+    display: none !important;
+  }
+}
+
+/* Phone Placeholder & Play Button */
+.phone-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #111115 0%, #050508 100%);
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  text-align: center;
+}
+
+.phone-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 16, 79, 0.15) 0%, transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+  animation: rotateGlow 15s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.phone-play-btn {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(255, 16, 79, 0.4);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.phone-placeholder:hover .phone-play-btn {
+  transform: scale(1.15);
+  box-shadow: 0 15px 35px rgba(255, 16, 79, 0.6);
+  animation: pulsePlay 1.5s infinite;
+}
+
+@keyframes pulsePlay {
+  0% {
+    box-shadow: 0 15px 35px rgba(255, 16, 79, 0.6), 0 0 0 0px rgba(255, 16, 79, 0.4);
+  }
+  100% {
+    box-shadow: 0 15px 35px rgba(255, 16, 79, 0.6), 0 0 0 20px rgba(255, 16, 79, 0);
+  }
+}
+
+.phone-placeholder-logo {
+  position: absolute;
+  top: 4rem;
+  opacity: 0.08;
+  transform: scale(3.5);
+  color: var(--accent-base);
+  z-index: 1;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s;
+}
+
+.phone-placeholder:hover .phone-placeholder-logo {
+  opacity: 0.15;
+  transform: scale(4) rotate(10deg);
+}
+
+.phone-placeholder-client {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.phone-placeholder-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 2;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.phone-placeholder-hint {
+  position: absolute;
+  bottom: 3rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.phone-placeholder:hover .phone-placeholder-hint {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness for Phone Mockups */
+@media (max-width: 480px) {
+  .phone-mockup {
+    max-width: 270px;
+    height: 490px;
+    border-width: 8px;
+    border-radius: 30px;
+  }
+  .phone-notch {
+    width: 90px;
+    height: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .phone-play-btn {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+  }
+  .phone-play-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .phone-placeholder-logo {
+    top: 3rem;
+    transform: scale(2.5);
+  }
+  .phone-placeholder:hover .phone-placeholder-logo {
+    transform: scale(2.8) rotate(10deg);
+  }
+  .phone-placeholder-client {
+    font-size: 1.15rem;
+  }
+  .phone-placeholder-tagline {
+    font-size: 0.75rem;
+  }
+  .phone-placeholder-hint {
+    bottom: 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Preloader / Loading Screen */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050508;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.preloader-logo-container {
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo-glow {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-base) 0%, transparent 70%);
+  opacity: 0.3;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.3); opacity: 0.45; }
+}
+
+.preloader-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 16, 79, 0.4);
+  position: relative;
+  left: 0.1em;
+}
+
+.preloader-progress-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.preloader-progress-bar {
+  height: 100%;
+  background: var(--gradient-accent);
+  width: 0%;
+  transition: width 0.4s ease-out;
+  box-shadow: 0 0 10px var(--accent-base);
+}
+
+.preloader-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.preloader-status {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+}
+
+
+
+

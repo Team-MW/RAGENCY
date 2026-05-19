@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Agency } from './pages/Agency';
+import { Realisations } from './pages/Realisations';
 import { Contact } from './pages/Contact';
 import { Legal } from './pages/Legal';
 import { HelmetProvider } from 'react-helmet-async';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="services" element={<Services />} />
+            <Route path="realisations" element={<Realisations />} />
             <Route path="l-agence" element={<Agency />} />
             <Route path="contact" element={<Contact />} />
             <Route path="mentions-legales" element={<Legal />} />

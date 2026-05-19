@@ -24,6 +24,7 @@ export const Layout = () => {
                 <div className="nav-links">
                     <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Accueil</Link>
                     <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
+                    <Link to="/realisations" className={`nav-link ${location.pathname === '/realisations' ? 'active' : ''}`}>Réalisations</Link>
                     <Link to="/l-agence" className={`nav-link ${location.pathname === '/l-agence' ? 'active' : ''}`}>L'Agence</Link>
                     <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
                 </div>
@@ -41,6 +42,7 @@ export const Layout = () => {
                 <div className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
                     <Link to="/" className={`mobile-link ${location.pathname === '/' ? 'active' : ''}`}>Accueil</Link>
                     <Link to="/services" className={`mobile-link ${location.pathname === '/services' ? 'active' : ''}`}>Services</Link>
+                    <Link to="/realisations" className={`mobile-link ${location.pathname === '/realisations' ? 'active' : ''}`}>Réalisations</Link>
                     <Link to="/l-agence" className={`mobile-link ${location.pathname === '/l-agence' ? 'active' : ''}`}>L'Agence</Link>
                     <Link to="/contact" className={`mobile-link ${location.pathname === '/contact' ? 'active' : ''}`}>Contact</Link>
                 </div>
@@ -102,6 +104,7 @@ export const Layout = () => {
                                 <ul className="footer-links">
                                     <li><Link to="/">Accueil</Link></li>
                                     <li><Link to="/services">Nos Services</Link></li>
+                                    <li><Link to="/realisations">Nos Réalisations</Link></li>
                                     <li><Link to="/l-agence">L'Agence</Link></li>
                                     <li><Link to="/contact">Contact</Link></li>
                                 </ul>

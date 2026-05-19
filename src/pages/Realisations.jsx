@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Eye, Flame, Dumbbell, UtensilsCrossed, Sparkles, GraduationCap, Filter } from 'lucide-react';
+import { ArrowRight, Eye, Flame, Smartphone, UtensilsCrossed, Sparkles, GraduationCap, Filter, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FadeUp } from '../components/FadeUp';
 import { Marquee } from '../components/Marquee';
@@ -11,23 +11,23 @@ const REALISATIONS_DATA = [
         id: '1',
         videoId: '7532518749199437078',
         client: 'DBC Toulouse',
-        category: 'Sport & Fitness',
-        categorySlug: 'sport',
+        category: 'High-Tech & Réparation',
+        categorySlug: 'tech',
         stats: { views: '380K+', engagement: '18K+' },
-        title: 'DBC Toulouse - Crossfit & Force',
-        description: 'Mise en avant immersive de la box d\'entraînement DBC Toulouse avec un rythme ultra-dynamique, des transitions millimétrées et une ambiance underground.',
-        tags: ['Crossfit', 'Énergie', 'Montage Rythmé']
+        title: 'DBC Toulouse - Réparation Premium',
+        description: 'Mise en avant dynamique et esthétique du savoir-faire technique en boutique. Focus sur la précision des réparations de smartphones et la qualité du reconditionné.',
+        tags: ['HighTech', 'Réparation', 'SavoirFaire']
     },
     {
         id: '2',
         videoId: '7596424505250073878',
         client: 'DBC Toulouse',
-        category: 'Sport & Fitness',
-        categorySlug: 'sport',
+        category: 'High-Tech & Réparation',
+        categorySlug: 'tech',
         stats: { views: '240K+', engagement: '12K+' },
-        title: 'DBC Toulouse - Workout Motivation',
-        description: 'Vidéo focus sur le dépassement de soi et le coaching personnalisé. Impact visuel fort conçu pour capter instantanément l\'attention de l\'audience fitness.',
-        tags: ['Motivation', 'Coaching', 'Impact Visuel']
+        title: 'DBC Toulouse - Service Express',
+        description: 'Vidéo focus sur la rapidité du service de réparation de téléphones en boutique, le diagnostic précis en moins de 30 minutes et la garantie offerte.',
+        tags: ['Express', 'Smartphone', 'Toulouse']
     },
     {
         id: '3',
@@ -82,13 +82,14 @@ const REALISATIONS_DATA = [
         stats: { views: '150K+', engagement: '9K+' },
         title: 'Meta DX School - Formations d\'Excellence',
         description: 'Présentation de l\'école de formation esthétique Meta DX School. Une vidéo professionnelle à visée éducative, alliant expertise médicale et clarté pédagogique.',
-        tags: ['Formation', 'Esthétique Médicale', 'Pédagogie']
+        tags: ['Formation', 'Esthétique Médicale', 'Pédagogie'],
+        website: 'https://metadxs.com'
     }
 ];
 
 const CATEGORIES = [
     { name: 'Tous', slug: 'all' },
-    { name: 'Sport & Fitness', slug: 'sport' },
+    { name: 'High-Tech & Réparation', slug: 'tech' },
     { name: 'Food & Restauration', slug: 'food' },
     { name: 'Beauté & Esthétique', slug: 'beauty' },
     { name: 'Formation', slug: 'education' }
@@ -126,8 +127,8 @@ export const Realisations = () => {
     // Category icon helper to avoid dynamic component rendering risks
     const renderCategoryIcon = (slug, size) => {
         switch (slug) {
-            case 'sport':
-                return <Dumbbell size={size} />;
+            case 'tech':
+                return <Smartphone size={size} />;
             case 'food':
                 return <UtensilsCrossed size={size} />;
             case 'beauty':
@@ -321,17 +322,40 @@ export const Realisations = () => {
                                                         {item.category}
                                                     </span>
                                                 </div>
-                                                <span style={{ 
-                                                    fontSize: '0.8rem', 
-                                                    color: 'var(--text-muted)', 
-                                                    background: 'var(--glass-bg)', 
-                                                    padding: '0.3rem 0.6rem', 
-                                                    borderRadius: '20px',
-                                                    border: '1px solid var(--glass-border)',
-                                                    fontWeight: '600'
-                                                }}>
-                                                    @{item.client.toLowerCase().replace(/\s/g, '')}
-                                                </span>
+                                                {item.website ? (
+                                                    <a 
+                                                        href={item.website}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        style={{ 
+                                                            fontSize: '0.8rem', 
+                                                            color: 'var(--accent-base)', 
+                                                            background: 'var(--glass-bg)', 
+                                                            padding: '0.3rem 0.6rem', 
+                                                            borderRadius: '20px',
+                                                            border: '1px solid var(--accent-base)',
+                                                            fontWeight: '700',
+                                                            display: 'inline-flex',
+                                                            alignItems: 'center',
+                                                            gap: '0.25rem',
+                                                            textDecoration: 'none'
+                                                        }}
+                                                    >
+                                                        Site Web <ExternalLink size={12} />
+                                                    </a>
+                                                ) : (
+                                                    <span style={{ 
+                                                        fontSize: '0.8rem', 
+                                                        color: 'var(--text-muted)', 
+                                                        background: 'var(--glass-bg)', 
+                                                        padding: '0.3rem 0.6rem', 
+                                                        borderRadius: '20px',
+                                                        border: '1px solid var(--glass-border)',
+                                                        fontWeight: '600'
+                                                    }}>
+                                                        @{item.client.toLowerCase().replace(/\s/g, '')}
+                                                    </span>
+                                                )}
                                             </div>
 
                                             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.8rem', color: 'var(--text-main)', fontFamily: 'Outfit', fontWeight: '700' }}>

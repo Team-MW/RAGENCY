@@ -822,82 +822,67 @@ html, body {
 
 .preloader-content {
   text-align: center;
-  max-width: 450px;
-  width: 90%;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 10;
 }
 
-.preloader-logo-container {
-  margin-bottom: 2.5rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preloader-logo-glow {
-  position: absolute;
-  width: 120px;
-  height: 120px;
+.preloader-minimal-spinner {
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  border-top-color: var(--accent-base);
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-base) 0%, transparent 70%);
-  opacity: 0.3;
-  animation: pulseGlow 2s infinite ease-in-out;
+  animation: preloaderSpin 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px rgba(255, 16, 79, 0.1);
 }
 
-@keyframes pulseGlow {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.3); opacity: 0.45; }
+@keyframes preloaderSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .preloader-logo-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 900;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.35em;
   color: #fff;
-  text-shadow: 0 0 20px rgba(255, 16, 79, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
   position: relative;
-  left: 0.1em;
+  left: 0.17em;
 }
 
-.preloader-progress-container {
-  width: 100%;
-  height: 4px;
+.preloader-progress-line-container {
+  width: 120px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
   position: relative;
 }
 
-.preloader-progress-bar {
+.preloader-progress-line {
   height: 100%;
   background: var(--gradient-accent);
   width: 0%;
-  transition: width 0.4s ease-out;
-  box-shadow: 0 0 10px var(--accent-base);
-}
-
-.preloader-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #fff;
-  margin-bottom: 0.5rem;
+  transition: width 0.2s cubic-bezier(0.1, 0.8, 0.2, 1);
+  box-shadow: 0 0 8px var(--accent-base);
 }
 
 .preloader-status {
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
   font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.8;
 }
+
 
 
 

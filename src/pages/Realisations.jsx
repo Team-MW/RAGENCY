@@ -96,36 +96,34 @@ const CATEGORIES = [
 
 export const Realisations = () => {
     const [selectedCategory, setSelectedCategory] = useState('all');
-    const [loadedCount, setLoadedCount] = useState(0);
+    const [progress, setProgress] = useState(0);
     const [loading, setLoading] = useState(true);
 
-    // Safeguard timeout to ensure preloader fades out in maximum 5 seconds
+    // Highly optimized perceived-performance preloader (fake fast progress)
+    // Always completes in exactly 1.4 seconds for instant feel
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 5500);
-        return () => clearTimeout(timer);
-    }, []);
+        const interval = setInterval(() => {
+            setProgress(prev => {
+                if (prev >= 100) {
+                    clearInterval(interval);
+                    // Minimal snap-out delay
+                    setTimeout(() => setLoading(false), 150);
+                    return 100;
+                }
+                // Quick start, smooth middle, snapping finish
+                const increment = prev < 50 ? 10 : prev < 80 ? 6 : 14;
+                return Math.min(100, prev + increment);
+            });
+        }, 100);
 
-    const handleIframeLoad = () => {
-        setLoadedCount(prev => {
-            const next = prev + 1;
-            // When all 7 videos are loaded, hide the preloader
-            if (next >= REALISATIONS_DATA.length) {
-                setLoading(false);
-            }
-            return next;
-        });
-    };
+        return () => clearInterval(interval);
+    }, []);
 
     const filteredRealisations = selectedCategory === 'all'
         ? REALISATIONS_DATA
         : REALISATIONS_DATA.filter(item => item.categorySlug === selectedCategory);
 
-    // Calculate real-time loading progress percentage
-    const progress = Math.min(100, Math.round((loadedCount / REALISATIONS_DATA.length) * 100));
-
-    // Category icon helper to avoid dynamic JSX components in object variables
+    // Category icon helper to avoid dynamic component rendering risks
     const renderCategoryIcon = (slug, size) => {
         switch (slug) {
             case 'sport':
@@ -148,33 +146,25 @@ export const Realisations = () => {
                 <meta name="description" content="Découvrez nos vidéos TikTok & Reels à fort impact et ultra-virales produites pour nos clients à Toulouse et à l'international : DBC Toulouse, L'Atelier White, Times Square, Meta DX School." />
             </Helmet>
 
-            {/* HIGH-END PRELOADER OVERLAY */}
+            {/* MINIMALIST & ULTRA-FAST PRELOADER OVERLAY */}
             <AnimatePresence>
                 {loading && (
                     <motion.div
                         className="preloader-overlay"
                         initial={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        transition={{ duration: 0.5, ease: 'easeInOut' }}
                     >
                         <div className="preloader-content">
-                            <div className="preloader-logo-container">
-                                <div className="preloader-logo-glow" />
-                                <span className="preloader-logo-text text-gradient">R.A</span>
-                            </div>
-                            <h2 className="preloader-title">Propulsion de la Viralité</h2>
-                            <div className="preloader-progress-container">
+                            <div className="preloader-minimal-spinner" />
+                            <div className="preloader-logo-text">R.AGENCY</div>
+                            <div className="preloader-progress-line-container">
                                 <div 
-                                    className="preloader-progress-bar" 
+                                    className="preloader-progress-line" 
                                     style={{ width: `${progress}%` }}
                                 />
                             </div>
-                            <span className="preloader-status">
-                                {progress < 100 
-                                    ? `Initialisation des vidéos créatives... ${progress}%`
-                                    : 'Prêt à performer !'
-                                }
-                            </span>
+                            <span className="preloader-status">Chargement</span>
                         </div>
                     </motion.div>
                 )}
@@ -298,7 +288,7 @@ export const Realisations = () => {
                                                         allow="autoplay; encrypted-media; picture-in-picture"
                                                         allowFullScreen
                                                         title={item.title}
-                                                        onLoad={handleIframeLoad}
+                                                        loading="lazy"
                                                     />
                                                 </div>
                                             </div>

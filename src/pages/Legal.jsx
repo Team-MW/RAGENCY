@@ -41,7 +41,7 @@ export const Legal = () => {
                                     <p><strong>Domaine d’activité :</strong> Commerce de détail, à l'exception des automobiles et des motocycles</p>
                                     <p><strong>Forme d'exercice :</strong> Commerciale</p>
                                     <p><strong>Siège social :</strong> Toulouse, France</p>
-                                    <p><strong>Email :</strong> r.agency98@gmail.com</p>
+                                    <p><strong>Email :</strong> <a href="mailto:contact@ragency.fr">contact@ragency.fr</a></p>
                                     <p><strong>Téléphone :</strong> +33 7 81 34 04 83 / +33 6 47 19 54 36</p>
                                     <p><strong>Directeur de la publication :</strong> CHERRADI GHITA</p>
                                     <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', fontStyle: 'italic' }}><strong>Note :</strong> Anciennement inscrite à l'ORIAS sous le numéro 22007331 en tant que Mandataire d'Intermédiaire en Assurance (MIA) sans maniement de fonds (RADIÉ depuis le 17/02/2023).</p>
@@ -86,7 +86,7 @@ export const Legal = () => {
                                         Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée et au Règlement européen (RGPD), vous bénéficiez d'un droit d'accès, de rectification, de portabilité et d'effacement de vos données ou encore de limitation du traitement. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.
                                     </p>
                                     <p style={{ marginTop: '1rem' }}>
-                                        Pour exercer ces droits, veuillez nous contacter par email à l'adresse suivante : r.agency98@gmail.com
+                                        Pour exercer ces droits, veuillez nous contacter par email à l'adresse suivante : <a href="mailto:contact@ragency.fr">contact@ragency.fr</a>
                                     </p>
                                 </div>
                             </div>

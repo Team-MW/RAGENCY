@@ -132,8 +132,8 @@ export const Layout = () => {
                                     <li style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '0.5rem' }}>
                                         <Mail size={24} color="var(--accent-base)" style={{ flexShrink: 0 }} />
                                         <span style={{ color: 'var(--text-main)', fontSize: '1.1rem', fontWeight: '600' }}>
-                                            <a href="mailto:r.agency98@gmail.com" className="hover-text-gradient" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
-                                                r.agency98@gmail.com
+                                            <a href="mailto:contact@ragency.fr" className="hover-text-gradient" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '4px' }}>
+                                                contact@ragency.fr
                                             </a>
                                         </span>
                                     </li>

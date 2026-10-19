@@ -89,7 +89,7 @@ export const Contact = () => {
                                         <div className="contact-icon" style={{ flexShrink: 0 }}><Mail size={24} /></div>
                                         <div>
                                             <h4 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '0.2rem' }}>Email</h4>
-                                            <p style={{ color: 'var(--text-muted)' }}>r.agency98@gmail.com</p>
+                                            <p style={{ color: 'var(--text-muted)' }}><a href="mailto:contact@ragency.fr" style={{ color: 'inherit' }}>contact@ragency.fr</a></p>
                                         </div>
                                     </div>
                                 </div>

@@ -203,14 +203,18 @@ ul {
   pointer-events: none;
 }
 
-/* Calendly Widget Fix */
-.calendly-inline-widget {
-  min-height: 700px;
-  height: 700px !important;
+.jotform-embed {
+  width: 100%;
+  min-height: 540px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #050505;
 }
 
-@media (max-width: 768px) {
-  .calendly-inline-widget {
-    height: 950px !important; /* Increased height for mobile to ensure the "Schedule" button is visible and reachable */
-  }
+.jotform-embed iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: none !important;
+  display: block;
+  background: #050505;
 }

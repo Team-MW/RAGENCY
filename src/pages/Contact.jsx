@@ -10,17 +10,19 @@ export const Contact = () => {
     const yBg1 = useTransform(scrollYProgress, [0, 1], [0, 500]);
     const yBg2 = useTransform(scrollYProgress, [0, 1], [0, -500]);
 
+    const formRef = React.useRef(null);
+
     React.useEffect(() => {
+        const container = formRef.current;
+        if (!container) return;
+
         const script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        script.async = true;
-        document.body.appendChild(script);
+        script.src = 'https://form.jotform.com/jsform/262912654264359';
+        script.type = 'text/javascript';
+        container.appendChild(script);
 
         return () => {
-            const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-            if (existingScript && document.body.contains(existingScript)) {
-                document.body.removeChild(existingScript);
-            }
+            container.replaceChildren();
         };
     }, []);
 
@@ -54,17 +56,10 @@ export const Contact = () => {
             <section className="section theme-dark" style={{ paddingBottom: '6rem' }}>
                 <div className="container">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginTop: '3rem' }}>
-                        {/* Calendly Inline Widget - Full Width */}
                         <FadeUp delay={0.2}>
                             <div className="glass-panel contact-details-panel" style={{ padding: '2rem' }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Planifiez un rendez-vous</h3>
-                                <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
-                                    <div 
-                                        className="calendly-inline-widget" 
-                                        data-url="https://calendly.com/desosocalendly/30min" 
-                                        style={{ height: '700px', width: '100%' }}
-                                    ></div>
-                                </div>
+                                <h3 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: 'var(--text-main)', textAlign: 'center' }}>Parlez-nous de votre projet</h3>
+                                <div ref={formRef} className="jotform-embed" />
                             </div>
                         </FadeUp>
 
